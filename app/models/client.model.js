@@ -11,7 +11,8 @@ const Client = mongoose.model(
         nationality: String,
         city: String,
         smoker: Boolean
-    })
+    }),
+    "client"
 );
 
 module.exports = Client;
