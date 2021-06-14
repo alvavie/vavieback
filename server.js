@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const router = express.Router();
 
 const app = express();
 
@@ -100,3 +101,5 @@ function initial() {
         }
     });
 }
+
+module.exports = router ;
