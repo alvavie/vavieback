@@ -36,31 +36,4 @@ module.exports = function (app) {
         [authJwt.verifyToken],
         controller.getFundPriceHist);
 
-
-
-
-
-
-    app.use("/cities", controller.getCities);
-
-    app.post("/videos", controller.getVideos);
-
-    app.post("/video", controller.getVideo);
-
-    app.post(
-        "/videoPlayTime",
-        [authJwt.verifyToken],
-        controller.postVideoPlayTime);
-
-    app.post("/getVideoTimeStart", controller.getVideoPlayTime);
-
-    app.post(
-        "/uploadMp4",
-        [authJwt.verifyToken],
-        controller.uploadVideo);
-
-    app.post(
-        "/deleteMedia",
-        [authJwt.verifyToken, authJwt.isAdmin],
-        controller.deleteMedia);
 };

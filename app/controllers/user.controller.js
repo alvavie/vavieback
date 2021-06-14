@@ -11,17 +11,16 @@ const path = require('path');
 
 exports.getClientInfo = (req, res) => {
     console.log('request client info');
-    Client.find(
-        {
-            username: {$in: req.body.username}
-        }, (err, client) => {
+    console.log(req.body.username);
+    Client.find({username: req.body.username}, (err, response) => {
             if (err) {
                 res.status(500).send({message: err});
                 console.log('error on request to clients');
                 return;
             }
-            if (client.length) {
-                res.send(client[0]);
+            console.log(response);
+            if (response.length) {
+                res.send(response);
             } else {
                 res.status(200).send({message: 'No client found'});
                 console.log('No Client found');
