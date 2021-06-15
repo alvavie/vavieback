@@ -20,7 +20,7 @@ exports.getClientInfo = (req, res) => {
             }
             console.log(response);
             if (response.length) {
-                res.send(response);
+                res.send(response[0]);
             } else {
                 res.status(200).send({message: 'No client found'});
                 console.log('No Client found');
